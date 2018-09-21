@@ -1,9 +1,6 @@
 
-
-
-// OnClick functions to search for recipes by category // Results are returned as images
+// OnClick functions to search for recipes by category 
 // Results are returned as images
-
 
 //chicken
 $("#chicken").on("click", function () {
@@ -14,14 +11,15 @@ $("#chicken").on("click", function () {
     method: "GET"
   }).then(function (response) {
     console.log(response);
-
+    $("#images").empty();
+    
     // For loop to return 12 images
     for (let i = 0; i < 12; i++) {
 
       var imgURL = response.meals[i].strMealThumb;
-      var image = $("<img>").attr("src", imgURL).height(200).width(200);
+      var image = $("<img>").attr("src", imgURL).height(250).width(250);
 
-      $("#image").append(image);
+      $("#images").append(image);
 
     };
   });
@@ -36,14 +34,15 @@ $("#beef").on("click", function () {
     method: "GET"
   }).then(function (response) {
     console.log(response);
+    $("#images").empty();
 
     // For loop to return 12 images
     for (let i = 0; i < 12; i++) {
 
       var imgURL = response.meals[i].strMealThumb;
-      var image = $("<img>").attr("src", imgURL).height(200).width(200);
+      var image = $("<img>").attr("src", imgURL).height(250).width(250);
 
-      $("#image").append(image);
+      $("#images").append(image);
 
     };
   });
@@ -58,14 +57,15 @@ $("#pork").on("click", function () {
     method: "GET"
   }).then(function (response) {
     console.log(response);
+    $("#images").empty();
 
     // For loop to return 12 images
     for (let i = 0; i < 12; i++) {
 
       var imgURL = response.meals[i].strMealThumb;
-      var image = $("<img>").attr("src", imgURL).height(200).width(200);
+      var image = $("<img>").attr("src", imgURL).height(250).width(250);
 
-      $("#image").append(image);
+      $("#images").append(image);
 
     };
   });
@@ -80,14 +80,15 @@ $("#seafood").on("click", function () {
     method: "GET"
   }).then(function (response) {
     console.log(response);
+    $("#images").empty();
 
     // For loop to return 12 images
     for (let i = 0; i < 12; i++) {
 
       var imgURL = response.meals[i].strMealThumb;
-      var image = $("<img>").attr("src", imgURL).height(200).width(200);
+      var image = $("<img>").attr("src", imgURL).height(250).width(250);
 
-      $("#image").append(image);
+      $("#images").append(image);
 
     };
   });
@@ -102,14 +103,14 @@ $("#vegetarian").on("click", function () {
     method: "GET"
   }).then(function (response) {
     console.log(response);
-
+    $("#images").empty();
     // For loop to return 12 images
     for (let i = 0; i < 12; i++) {
 
       var imgURL = response.meals[i].strMealThumb;
-      var image = $("<img>").attr("src", imgURL).height(200).width(200);
+      var image = $("<img>").attr("src", imgURL).height(250).width(250);
 
-      $("#image").append(image);
+      $("#images").append(image);
 
     };
   });
@@ -124,17 +125,16 @@ $("#dessert").on("click", function () {
     method: "GET"
   }).then(function (response) {
     console.log(response);
-
+    $("#images").empty();
     // For loop to return 12 images
     for (let i = 0; i < 12; i++) {
 
       var imgURL = response.meals[i].strMealThumb;
-      var image = $("<img>").attr("src", imgURL).height(200).width(200);
+      var image = $("<img>").attr("src", imgURL).height(250).width(250);
 
-      $("#image").append(image);
+      $("#images").append(image);
 
     };
   });
 });
-
 
