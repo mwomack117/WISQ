@@ -2,70 +2,90 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- BOOTSTRAP -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
-  <!-- CUSTOM CSS  -->
-  <link rel="stylesheet" href="assets/css/style.css" class="style">
-  <!-- FONT AWESOME - ICONS -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-    crossorigin="anonymous">
-  <!-- GOOGLE FONT -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <title>Wisq</title>
+  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<!-- MINIFIED MATERIALIZE CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  
+<!-- CUSTOM CSS  -->
+<link rel="stylesheet" href="assets/css/style.css" class="style">
+  
+<!-- FONT AWESOME - ICONS -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  
+<!-- MINIFIED MATERIALIZE JS  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
+<!-- JQUERY -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+<title>Wisq</title>
+  
 </head>
 
 <body>
-
-  <div class="nav">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-6"> <a href="index.html"> Wisq </a> </div>
+  
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper"> <a href="#" class="brand-logo"> wisq </a> <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+      <ul class="right hide-on-med-and-down">
         <!-- Maybe replace text with icons? -->
-        <div class="col-2"> <a href="index.html"> eat </a> </div>
-        <div class="col-2"> <a href="index.html"> drink </a> </div>
-        <div class="col-2"> <a href="index.html"> favs </a> </div>
-      </div>
+        <li><a href="food.html"> eat </a></li>
+        <li><a href="drink.html"> drink </a></li>
+        <li><a href="favorite.html"> fav </a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <ul class="sidenav" id="mobile-demo">
+    <!-- Maybe replace text with icons? -->
+    <li><a href="food.html"> eat </a></li>
+    <li><a href="drink.html"> drink </a></li>
+    <li><a href="favorite.html"> fav </a></li>
+  </ul>
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col s12 m6 l2">
+      <button type="button" class="waves-effect waves-teal btn-flat" id="beef"> beef </button>
+    </div>
+    <div class="col s12 m6 l2">
+      <button type="button" class="waves-effect waves-teal btn-flat" id="chicken"> chicken </button>
+    </div>
+    <div class="col s12 m6 l2">
+      <button type="button" class="waves-effect waves-teal btn-flat" id="pork"> pork </button>
+    </div>
+    <div class="col s12 m6 l2">
+      <button type="button" class="waves-effect waves-teal btn-flat" id="seafood"> seafood </button>
+    </div>
+    <div class="col s12 m6 l2">
+      <button type="button" class="waves-effect waves-teal btn-flat" id="vegetarian"> vegetarian </button>
+    </div>
+    <div class="col s12 m6 l2">
+      <button type="button" class="waves-effect waves-teal btn-flat" id="dessert"> dessert </button>
     </div>
   </div>
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-2">
-        <button type="button" class="btn btn-outline-dark" id="beef"> Beef </button>
-      </div>
-      <div class="col-2">
-        <button type="button" class="btn btn-outline-dark" id="chicken"> Chicken </button>
-      </div>
-      <div class="col-2">
-        <button type="button" class="btn btn-outline-dark" id="pork"> Pork </button>
-      </div>
-      <div class="col-2">
-        <button type="button" class="btn btn-outline-dark" id="seafood"> Seafood </button>
-      </div>
-      <div class="col-2">
-        <button type="button" class="btn btn-outline-dark" id="vegetarian"> Vegetarian </button>
-      </div>
-      <div class="col-2">
-        <button type="button" class="btn btn-outline-dark" id="dessert"> Dessert </button>
-      </div>
+</div>
+  
+<div class="container">
+  <div class="row">
+    <h5>Latest Recipes</h5>
+    <div class="divider"></div>
+    
+    <div class="portfolio"> 
+      <!--<img class="materialboxed" id="images" alt="">-->
+      <div id="images"></div>
     </div>
   </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1>Latest Recipes</h1>
-        <!-- Recipe search results here -->
-        <div id="images"></div>
-      </div>
-    </div>
-  </div>
-
-  <script src="assets/Javascript/app.js"></script>
+</div>
+  
+<script src="assets/js/script.js"></script>
 </body>
 
 </html>

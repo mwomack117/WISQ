@@ -1,3 +1,27 @@
+/* CSS Document */
+
 /* GLOBAL */
+*, html, body {
+  font-family: 'Montserrat', sans-serif;
+}
 
 /* NAV */
+nav {
+  background-color: #757575;
+  padding: 0px 30px;
+}
+
+/* CONTENT */
+.container {
+  padding: 30px 0px;
+}
+button{
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/* PORTFOLIO / GALLERY*/
+img {
+  margin: 5px;
+  padding: 5px;
+}
