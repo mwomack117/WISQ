@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  
 <!-- MINIFIED MATERIALIZE CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
+  
 <!-- CUSTOM CSS  -->
 <link rel="stylesheet" href="assets/css/style.css" class="style">
-
+  
 <!-- FONT AWESOME - ICONS -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
+  
 <!-- GOOGLE FONT -->
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
+  
 <!-- MINIFIED MATERIALIZE JS  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+  
 <!-- JQUERY -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
 <title>Wisq</title>
+  
 </head>
 
 <body>
+  
 <div class="navbar-fixed">
   <nav>
     <div class="nav-wrapper"> <a href="#" class="brand-logo"> wisq </a> <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
         <!-- Maybe replace text with icons? -->
-        <li><a href="#"> eat </a></li>
+        <li><a href="index.html"> eat </a></li>
         <li><a href="drink.html"> drink </a></li>
-        <li><a href="favorite.html"> fav </a></li>
+        <li><a href="#"> fav </a></li>
       </ul>
     </div>
   </nav>
+  
   <ul class="sidenav" id="mobile-demo">
     <!-- Maybe replace text with icons? -->
     <li><a href="food.html"> eat </a></li>
@@ -43,52 +49,43 @@
     <li><a href="favorite.html"> fav </a></li>
   </ul>
 </div>
+  
 <div class="container">
   <div class="row">
-    <div class="col s12 m6 l2">
-      <button type="button" class="waves-effect waves-red btn-flat" id="beef"> beef </button>
+    <!--<div class="col s12 m6 l2">
+      <button type="button" class="waves-effect waves-teal btn-flat" id="beef"> beer </button>
     </div>
     <div class="col s12 m6 l2">
-      <button type="button" class="waves-effect waves-red btn-flat" id="chicken"> chicken </button>
+      <button type="button" class="waves-effect waves-teal btn-flat" id="chicken"> scotch </button>
     </div>
     <div class="col s12 m6 l2">
-      <button type="button" class="waves-effect waves-red btn-flat" id="pork"> pork </button>
+      <button type="button" class="waves-effect waves-teal btn-flat" id="pork"> vodka </button>
     </div>
     <div class="col s12 m6 l2">
-      <button type="button" class="waves-effect waves-red btn-flat" id="seafood"> seafood </button>
+      <button type="button" class="waves-effect waves-teal btn-flat" id="seafood"> whiskey </button>
     </div>
     <div class="col s12 m6 l2">
-      <button type="button" class="waves-effect waves-red btn-flat" id="vegetarian"> vegetarian </button>
+      <button type="button" class="waves-effect waves-teal btn-flat" id="vegetarian"> wine </button>
     </div>
     <div class="col s12 m6 l2">
-      <button type="button" class="waves-effect waves-red btn-flat" id="dessert"> dessert </button>
-    </div>
+      <button type="button" class="waves-effect waves-teal btn-flat" id="dessert"> non-alcoholic </button>
+    </div>-->
   </div>
 </div>
   
 <div class="container">
-  <h5> Latest Food </h5>
-  <div class="divider"></div>
-  
-  
-  <div class="row"> 
-    <!-- The Modal -->
-    <div id="myModal" class="modal"> 
-      <!-- The Close Button --> 
-      <span class="close">&times;</span> 
-      <!-- Modal Content (The Image) --> 
-      <img class="modal-content" id="img01" alt=""> 
-      <!-- Modal Caption (Image Text) -->
-      <div id="caption"></div>
+  <div class="row">
+    <h5>Favorite Recipes</h5>
+    <div class="divider"></div>
+    
+    <div class="portfolio"> 
+      <!-- <img class="materialboxed" id="images" alt=""> -->
+      <div id="images"></div>
     </div>
   </div>
-  
-  <div class="row">
-    <div id="images"> </div>
-  </div>
 </div>
-  
   
 <script src="assets/js/script.js"></script>
 </body>
+
 </html>
