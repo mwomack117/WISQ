@@ -1,5 +1,5 @@
 # Wisq
-[View Demo](https://charlenerigby.github.io/Train-Scheduler/)
+[View Demo](https://mwomack117.github.io/Group-project-1/)
 
 Keep track of your favorite recipes and cocktails.
 - - - -
