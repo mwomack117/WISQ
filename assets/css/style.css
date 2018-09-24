@@ -48,6 +48,7 @@ img {
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
+    padding-bottom: 100px; /* Location of the box */
     left: 0;
     top: 64px;
     width: 100%; /* Full width */
@@ -75,6 +76,10 @@ img {
     color: #ccc;
     padding: 10px 0;
     height: 150px;
+    position: absolute;
+    top: 7%;
+    left: 23%;
+    font-size: 2.5em;
 }
 
 /* Add Animation - Zoom in the Modal */
