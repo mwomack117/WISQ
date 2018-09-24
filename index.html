@@ -2,90 +2,173 @@
 <html lang="en">
 
 <head>
-  
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-<!-- MINIFIED MATERIALIZE CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  
-<!-- CUSTOM CSS  -->
-<link rel="stylesheet" href="assets/css/style.css" class="style">
-  
-<!-- FONT AWESOME - ICONS -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  
-<!-- GOOGLE FONT -->
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  
-<!-- MINIFIED MATERIALIZE JS  -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  
-<!-- JQUERY -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  
-<title>Wisq</title>
-  
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- MINIFIED MATERIALIZE CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- CUSTOM CSS  -->
+  <link rel="stylesheet" href="assets/css/style.css" class="style">
+
+  <!-- FONT AWESOME - ICONS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+  <!-- MINIFIED MATERIALIZE JS  -->
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>-->
+
+  <!-- JQUERY -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <title>Wisq</title>
+
 </head>
 
 <body>
-  
-<div class="navbar-fixed">
-  <nav>
-    <div class="nav-wrapper"> <a href="#" class="brand-logo"> wisq </a> <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
-      <ul class="right hide-on-med-and-down">
-        <!-- Maybe replace text with icons? -->
-        <li><a href="food.html"> eat </a></li>
-        <li><a href="drink.html"> drink </a></li>
-        <li><a href="favorite.html"> fav </a></li>
-      </ul>
-    </div>
-  </nav>
-  
-  <ul class="sidenav" id="mobile-demo">
-    <!-- Maybe replace text with icons? -->
-    <li><a href="food.html"> eat </a></li>
-    <li><a href="drink.html"> drink </a></li>
-    <li><a href="favorite.html"> fav </a></li>
-  </ul>
-</div>
-  
-<div class="container">
-  <div class="row">
-    <div class="col s12 m6 l2">
-      <button type="button" class="waves-effect waves-teal btn-flat" id="beef"> beef </button>
-    </div>
-    <div class="col s12 m6 l2">
-      <button type="button" class="waves-effect waves-teal btn-flat" id="chicken"> chicken </button>
-    </div>
-    <div class="col s12 m6 l2">
-      <button type="button" class="waves-effect waves-teal btn-flat" id="pork"> pork </button>
-    </div>
-    <div class="col s12 m6 l2">
-      <button type="button" class="waves-effect waves-teal btn-flat" id="seafood"> seafood </button>
-    </div>
-    <div class="col s12 m6 l2">
-      <button type="button" class="waves-effect waves-teal btn-flat" id="vegetarian"> vegetarian </button>
-    </div>
-    <div class="col s12 m6 l2">
-      <button type="button" class="waves-effect waves-teal btn-flat" id="dessert"> dessert </button>
+
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo"> wisq </a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+          <i class="fas fa-bars"></i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <!-- Maybe replace text with icons? -->
+          <li>
+            <a href="food.html"> eat </a>
+          </li>
+          <li>
+            <a href="drink.html"> drink </a>
+          </li>
+          <li>
+            <a href="favorite.html"> fav </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+      <!-- Maybe replace text with icons? -->
+      <li>
+        <a href="food.html"> eat </a>
+      </li>
+      <li>
+        <a href="drink.html"> drink </a>
+      </li>
+      <li>
+        <a href="favorite.html"> fav </a>
+      </li>
+    </ul>
+  </div>
+
+  <!--Slider for Images-->
+  <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="assets/images/food1.jpg">
+      </li>
+      <li>
+        <img src="assets/images/food2.jpg">
+      </li>
+      <li>
+        <img src="assets/images/food11.jpg">
+      </li>
+      <li>
+        <img src="assets/images/food4.jpg">
+      </li>
+      <li>
+        <img src="assets/images/food5.jpg">
+      </li>
+      <li>
+        <img src="assets/images/food6.jpg">
+      </li>
+      <li>
+        <img src="assets/images/food7.jpg">
+      </li>
+      <li>
+        <img src="assets/images/food8.jpg">
+      </li>
+      <li>
+        <img src="assets/images/food9.jpg">
+      </li>
+      <li>
+        <img src="assets/images/food10.jpg">
+      </li>
+      <li>
+        <img src="assets/images/food3.jpg">
+      </li>
+      <li>
+        <img src="assets/images/food12.jpg">
+      </li>
+      <li>
+        <img src="assets/images/food13.jpg">
+      </li>
+      <li>
+        <img src="assets/images/food14.jpg">
+      </li>
+      <li>
+        <img src="assets/images/food15.jpg">
+      </li>
+      <li>
+        <img src="assets/images/food16.jpg">
+      </li>
+      <li>
+        <img src="assets/images/food17.jpg">
+      </li>
+      <li>
+        <img src="assets/images/food18.jpg">
+      </li>
+      <li>
+        <img src="assets/images/food19.jpg">
+      </li>
+      <li>
+        <img src="assets/images/food20.jpg">
+      </li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m6 l2">
+        <button type="button" class="waves-effect waves-teal btn-flat" id="beef"> beef </button>
+      </div>
+      <div class="col s12 m6 l2">
+        <button type="button" class="waves-effect waves-teal btn-flat" id="chicken"> chicken </button>
+      </div>
+      <div class="col s12 m6 l2">
+        <button type="button" class="waves-effect waves-teal btn-flat" id="pork"> pork </button>
+      </div>
+      <div class="col s12 m6 l2">
+        <button type="button" class="waves-effect waves-teal btn-flat" id="seafood"> seafood </button>
+      </div>
+      <div class="col s12 m6 l2">
+        <button type="button" class="waves-effect waves-teal btn-flat" id="vegetarian"> vegetarian </button>
+      </div>
+      <div class="col s12 m6 l2">
+        <button type="button" class="waves-effect waves-teal btn-flat" id="dessert"> dessert </button>
+      </div>
     </div>
   </div>
-</div>
-  
-<div class="container">
-  <div class="row">
-    <h5>Latest Recipes</h5>
-    <div class="divider"></div>
-    
-    <div class="portfolio"> 
-      <!--<img class="materialboxed" id="images" alt="">-->
-      <div id="images"></div>
+
+  <div class="container">
+    <div class="row">
+      <h5>Latest Recipes</h5>
+      <div class="divider"></div>
+
+      <div class="portfolio">
+        <!--<img class="materialboxed" id="images" alt="">-->
+        <div id="images"></div>
+      </div>
     </div>
   </div>
-</div>
-  
-<script src="assets/js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>

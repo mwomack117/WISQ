@@ -1,12 +1,16 @@
 // JavaScript Document
 
 $(document).ready(function () {
+  //M.AutoInit();
+
+  //SLIDER MATERIALIZE MATERIALBOX
+  $('.slider').slider({indicators:false});
 
   // SIDE NAV 
-  //$('.sidenav').sidenav();
-  
+  $('.sidenav').sidenav();
+
   // IMAGE MATERIALIZE MATERIALBOX
-  //$('.materialboxed').materialbox();
+  $('.materialboxed').materialbox();
 
   // OnClick functions to search for recipes by category. Results are returned as images
 
