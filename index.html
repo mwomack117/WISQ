@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,9 +18,6 @@
 
   <!-- GOOGLE FONT -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
-  <!-- MINIFIED MATERIALIZE JS  -->
-  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>-->
 
   <!-- JQUERY -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -161,14 +158,26 @@
       <h5>Latest Recipes</h5>
       <div class="divider"></div>
 
-      <div class="portfolio">
-        <!--<img class="materialboxed" id="images" alt="">-->
-        <div id="images"></div>
-      </div>
+      
+  <div class="row"> 
+    <!-- The Modal -->
+    <div id="myModal" class="modal"> 
+      <!-- The Close Button --> 
+      <span class="close">&times;</span> 
+      <!-- Modal Content (The Image) --> 
+      <img class="modal-content" id="img01" alt=""> 
+      <!-- Modal Caption (Image Text) -->
+      <div id="caption"></div>
     </div>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="assets/js/script.js"></script>
-</body>
+  
+  <div class="row">
+    <div id="images"> </div>
+  </div>
+</div>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
+<script src="assets/js/script.js"></script>
 
+</body>
 </html>
