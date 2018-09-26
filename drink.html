@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -21,14 +22,15 @@
   <!-- JQUERY -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   
-  <!-- MATERIALIZE JS -->
+  <!-- MINIFIED MATERIALIZE JS  -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  
+
   <title>Wisq</title>
+
 </head>
 
 <body>
-
+  
 <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper"> <a href="#" class="brand-logo"> wisq </a> <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
@@ -45,101 +47,33 @@
       <li><a href="drink.html"> drink </a></li>
       <li><a href="favorite.html"> fav </a></li>
     </ul>
+  </div>  
+
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m6 l2">
+        <button type="button" class="waves-effect waves-teal btn-flat" id="vodka"> vodka </button>
+      </div>
+      <div class="col s12 m6 l2">
+        <button type="button" class="waves-effect waves-teal btn-flat" id="tequila"> tequila </button>
+      </div>
+      <div class="col s12 m6 l2">
+        <button type="button" class="waves-effect waves-teal btn-flat" id="gin"> gin </button>
+      </div>
+      <div class="col s12 m6 l2">
+        <button type="button" class="waves-effect waves-teal btn-flat" id="rum"> rum </button>
+      </div>
+      <div class="col s12 m6 l2">
+        <button type="button" class="waves-effect waves-teal btn-flat" id="non-alc"> non-alc </button>
+      </div>
+    </div>
   </div>
 
-  <!--Slider for Images-->
-  <div class="slider">
-    <ul class="slides">
-      <li>
-        <img src="assets/images/food1.jpg">
-      </li>
-      <li>
-        <img src="assets/images/food2.jpg">
-      </li>
-      <li>
-        <img src="assets/images/food11.jpg">
-      </li>
-      <li>
-        <img src="assets/images/food4.jpg">
-      </li>
-      <li>
-        <img src="assets/images/food5.jpg">
-      </li>
-      <li>
-        <img src="assets/images/food6.jpg">
-      </li>
-      <li>
-        <img src="assets/images/food7.jpg">
-      </li>
-      <li>
-        <img src="assets/images/food8.jpg">
-      </li>
-      <li>
-        <img src="assets/images/food9.jpg">
-      </li>
-      <li>
-        <img src="assets/images/food10.jpg">
-      </li>
-      <li>
-        <img src="assets/images/food3.jpg">
-      </li>
-      <li>
-        <img src="assets/images/food12.jpg">
-      </li>
-      <li>
-        <img src="assets/images/food13.jpg">
-      </li>
-      <li>
-        <img src="assets/images/food14.jpg">
-      </li>
-      <li>
-        <img src="assets/images/food15.jpg">
-      </li>
-      <li>
-        <img src="assets/images/food16.jpg">
-      </li>
-      <li>
-        <img src="assets/images/food17.jpg">
-      </li>
-      <li>
-        <img src="assets/images/food18.jpg">
-      </li>
-      <li>
-        <img src="assets/images/food19.jpg">
-      </li>
-      <li>
-        <img src="assets/images/food20.jpg">
-      </li>
-    </ul>
-  </div>
-  
-<div class="container">
+  <div class="container">
     <div class="row">
-      <div class="col s12 m6 l2">
-        <button type="button" class="waves-effect waves-red btn-flat" id="beef"> beef </button>
-      </div>
-      <div class="col s12 m6 l2">
-        <button type="button" class="waves-effect waves-red btn-flat" id="chicken"> chicken </button>
-      </div>
-      <div class="col s12 m6 l2">
-        <button type="button" class="waves-effect waves-red btn-flat" id="pork"> pork </button>
-      </div>
-      <div class="col s12 m6 l2">
-        <button type="button" class="waves-effect waves-red btn-flat" id="seafood"> seafood </button>
-      </div>
-      <div class="col s12 m6 l2">
-        <button type="button" class="waves-effect waves-red btn-flat" id="vegetarian"> vegetarian </button>
-      </div>
-      <div class="col s12 m6 l2">
-        <button type="button" class="waves-effect waves-red btn-flat" id="dessert"> dessert </button>
-      </div>
-     </div>
-  </div>
-  
-<div class="container">
-    <div class="row">
-      <h5> Latest Food </h5>
+      <h5> Latest Drinks </h5>
       <div class="divider"></div>
+
       <div class="row">
         <!-- The Modal -->
         <div id="myModal" class="modal">
@@ -154,21 +88,20 @@
             <h5>Ingredients</h5>
             <div id="info"></div>
           </div>
-          <!-- <div id="instructionsDiv"> // instructions are really long
-            <h5>Instructions</h5>         // not sure if we want to add to modal
+          <div id="instructionsDiv"> 
+            <h5>Instructions</h5>         
             <div id="instructions"></div>
-          </div> -->
+          </div>
         </div>
       </div>
 
-      <div class="row">
-        <div id="images"> </div>
+      <div class="portfolio">
+        <div id="images"></div>
       </div>
     </div>
   </div>
 
   <script src="assets/js/script.js"></script>
-
 </body>
 
 </html>
