@@ -1,4 +1,5 @@
 // JavaScript Document
+
 // Initialize Firebase
 // var config = {
 //   apiKey: "AIzaSyA-QfumrPujLAK_ZEySWiQjoLiIuPY3MQk",
@@ -13,6 +14,7 @@
 // var database = firebase.database();
 
 $(document).ready(function () {
+  "use strict";
 
   //M.AutoInit();
 
@@ -22,11 +24,6 @@ $(document).ready(function () {
   // SIDE NAV 
   $('.sidenav').sidenav();
 
-  // IMAGE MATERIALIZE MATERIALBOX
-  $('.materialboxed').materialbox();
-
-  // OnClick functions to search for recipes by category. Results are returned as images
-
   // Beef
   $("#beef").on("click", function () {
     var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=beef";
@@ -35,7 +32,8 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function (response) {
-      console.log(response)
+      // console.log(response);
+
       $("#images").empty();
 
       // For loop to return 12 images
@@ -43,14 +41,15 @@ $(document).ready(function () {
 
         var name = response.meals[i].strMeal;
         var imgURL = response.meals[i].strMealThumb;
-        var image = $("<img>").attr("src", imgURL).height(250).width(250);
+        var image = $("<img>").attr("src", imgURL).height(200).width(200);
+
         image.attr("alt", name);
         image.attr("data-name", name);
 
         // Create a button on modal that will save information to favorite.html when clicked
         var save = $("#save");
         save.attr("data-name", response.meals[i]);
-        console.log(save)
+        console.log(save);
 
         /* ----- MODAL ----- */
         // create another ajax call to get more info from mealDb 
@@ -86,10 +85,10 @@ $(document).ready(function () {
 
           });
           // Get the modal
-          var modal = document.getElementById('myModal');
+          var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
-          var modalImg = document.getElementById("img01");
-          var captionText = document.getElementById("caption");
+          var modalImg = document.getElementById("modalImg");
+          var captionText = document.getElementById("modalText");
           modal.style.display = "block";
           modalImg.src = this.src;
           captionText.innerHTML = this.alt;
@@ -116,6 +115,7 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function (response) {
+      // console.log(response);
 
       $("#images").empty();
 
@@ -124,14 +124,15 @@ $(document).ready(function () {
 
         var name = response.meals[i].strMeal;
         var imgURL = response.meals[i].strMealThumb;
-        var image = $("<img>").attr("src", imgURL).height(250).width(250);
+        var image = $("<img>").attr("src", imgURL).height(200).width(200);
+
         image.attr("alt", name);
         image.attr("data-name", name);
 
         // Create a button on modal that will save information to favorite.html when clicked
         var save = $("#save");
         save.attr("data-name", response.meals[i]);
-        console.log(save)
+        console.log(save);
 
         /* ----- MODAL ----- */
         image.on("click", function () {
@@ -162,10 +163,10 @@ $(document).ready(function () {
 
           });
           // Get the modal
-          var modal = document.getElementById('myModal');
+          var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
-          var modalImg = document.getElementById("img01");
-          var captionText = document.getElementById("caption");
+          var modalImg = document.getElementById("modalImg");
+          var captionText = document.getElementById("modalText");
           modal.style.display = "block";
           modalImg.src = this.src;
           captionText.innerHTML = this.alt;
@@ -184,7 +185,6 @@ $(document).ready(function () {
     });
   });
 
-  // Pork
   $("#pork").on("click", function () {
     var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=pork";
 
@@ -192,6 +192,7 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function (response) {
+      // console.log(response);
 
       $("#images").empty();
 
@@ -200,14 +201,15 @@ $(document).ready(function () {
 
         var name = response.meals[i].strMeal;
         var imgURL = response.meals[i].strMealThumb;
-        var image = $("<img>").attr("src", imgURL).height(250).width(250);
+        var image = $("<img>").attr("src", imgURL).height(200).width(200);
+
         image.attr("alt", name);
         image.attr("data-name", name);
 
         // Create a button on modal that will save information to favorite.html when clicked
         var save = $("#save");
         save.attr("data-name", response.meals[i]);
-        console.log(save)
+        console.log(save);
 
         /* ----- MODAL ----- */
         image.on("click", function () {
@@ -238,10 +240,10 @@ $(document).ready(function () {
 
           })
           // Get the modal
-          var modal = document.getElementById('myModal');
+          var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
-          var modalImg = document.getElementById("img01");
-          var captionText = document.getElementById("caption");
+          var modalImg = document.getElementById("modalImg");
+          var captionText = document.getElementById("modalText");
           modal.style.display = "block";
           modalImg.src = this.src;
           captionText.innerHTML = this.alt;
@@ -260,7 +262,6 @@ $(document).ready(function () {
     });
   });
 
-  // Seafood
   $("#seafood").on("click", function () {
     var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=seafood";
 
@@ -268,6 +269,7 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function (response) {
+      // console.log(response);
 
       $("#images").empty();
 
@@ -276,14 +278,15 @@ $(document).ready(function () {
 
         var name = response.meals[i].strMeal;
         var imgURL = response.meals[i].strMealThumb;
-        var image = $("<img>").attr("src", imgURL).height(250).width(250);
+        var image = $("<img>").attr("src", imgURL).height(200).width(200);
+
         image.attr("alt", name);
         image.attr("data-name", name);
 
         // Create a button on modal that will save information to favorite.html when clicked
         var save = $("#save");
         save.attr("data-name", response.meals[i]);
-        console.log(save)
+        console.log(save);
 
         /* ----- MODAL ----- */
         image.on("click", function () {
@@ -314,10 +317,10 @@ $(document).ready(function () {
 
           });
           // Get the modal
-          var modal = document.getElementById('myModal');
+          var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
-          var modalImg = document.getElementById("img01");
-          var captionText = document.getElementById("caption");
+          var modalImg = document.getElementById("modalImg");
+          var captionText = document.getElementById("modalText");
           modal.style.display = "block";
           modalImg.src = this.src;
           captionText.innerHTML = this.alt;
@@ -336,7 +339,6 @@ $(document).ready(function () {
     });
   });
 
-  // Vegetarian
   $("#vegetarian").on("click", function () {
     var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=vegetarian";
 
@@ -344,6 +346,7 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function (response) {
+      // console.log(response);
 
       $("#images").empty();
       // For loop to return 12 images
@@ -351,14 +354,15 @@ $(document).ready(function () {
 
         var name = response.meals[i].strMeal;
         var imgURL = response.meals[i].strMealThumb;
-        var image = $("<img>").attr("src", imgURL).height(250).width(250);
+        var image = $("<img>").attr("src", imgURL).height(200).width(200);
+
         image.attr("alt", name);
         image.attr("data-name", name);
 
         // Create a button on modal that will save information to favorite.html when clicked
         var save = $("#save");
         save.attr("data-name", response.meals[i]);
-        console.log(save)
+        console.log(save);
 
         /* ----- MODAL ----- */
         image.on("click", function () {
@@ -389,10 +393,10 @@ $(document).ready(function () {
 
           });
           // Get the modal
-          var modal = document.getElementById('myModal');
+          var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
-          var modalImg = document.getElementById("img01");
-          var captionText = document.getElementById("caption");
+          var modalImg = document.getElementById("modalImg");
+          var captionText = document.getElementById("modalText");
           modal.style.display = "block";
           modalImg.src = this.src;
           captionText.innerHTML = this.alt;
@@ -411,7 +415,6 @@ $(document).ready(function () {
     });
   });
 
-  // Dessert
   $("#dessert").on("click", function () {
     var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=desert";
 
@@ -419,21 +422,22 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function (response) {
-      console.log(response);
+      // console.log(response);
       $("#images").empty();
       // For loop to return 12 images
       for (var i = 0; i < 12; i++) {
 
         var name = response.meals[i].strMeal;
         var imgURL = response.meals[i].strMealThumb;
-        var image = $("<img>").attr("src", imgURL).height(250).width(250);
+        var image = $("<img>").attr("src", imgURL).height(200).width(200);
+
         image.attr("alt", name);
         image.attr("data-name", name);
 
         // Create a button on modal that will save information to favorite.html when clicked
         var save = $("#save");
         save.attr("data-name", response.meals[i]);
-        console.log(save)
+        console.log(save);
 
         /* ----- MODAL ----- */
         image.on("click", function () {
@@ -486,11 +490,6 @@ $(document).ready(function () {
     });
   });
 
-  // ----------------DRINKS  code BELOW---------------------------------- //
-
-  // OnClick functions to search for drinks by category. Results are returned as images
-
-  // Vodka
   $("#vodka").on("click", function () {
     var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka";
 
@@ -505,7 +504,7 @@ $(document).ready(function () {
 
         var name = response.drinks[i].strDrink;
         var imgURL = response.drinks[i].strDrinkThumb;
-        var image = $("<img>").attr("src", imgURL).height(250).width(250);
+        var image = $("<img>").attr("src", imgURL).height(200).width(200);
         image.attr("alt", name);
         image.attr("data-name", name);
 
@@ -513,7 +512,7 @@ $(document).ready(function () {
         // Create a button on modal that will save information to favorite.html when clicked
         var save = $("#save");
         save.attr("data-name", response.drinks[i]);
-        console.log(save)
+        console.log(save);
 
         /* ----- MODAL ----- */
         image.on("click", function () {
@@ -565,7 +564,6 @@ $(document).ready(function () {
     });
   });
 
-  // Tequila
   $("#tequila").on("click", function () {
     var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Tequila";
 
@@ -580,7 +578,7 @@ $(document).ready(function () {
 
         var name = response.drinks[i].strDrink;
         var imgURL = response.drinks[i].strDrinkThumb;
-        var image = $("<img>").attr("src", imgURL).height(250).width(250);
+        var image = $("<img>").attr("src", imgURL).height(200).width(200);
         image.attr("alt", name);
         image.attr("data-name", name);
 
@@ -588,7 +586,7 @@ $(document).ready(function () {
         // Create a button on modal that will save information to favorite.html when clicked
         var save = $("#save");
         save.attr("data-name", response.drinks[i]);
-        console.log(save)
+        console.log(save);
 
         /* ----- MODAL ----- */
         image.on("click", function () {
@@ -641,7 +639,6 @@ $(document).ready(function () {
     });
   });
 
-  // Gin
   $("#gin").on("click", function () {
     var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin";
 
@@ -656,15 +653,14 @@ $(document).ready(function () {
 
         var name = response.drinks[i].strDrink;
         var imgURL = response.drinks[i].strDrinkThumb;
-        var image = $("<img>").attr("src", imgURL).height(250).width(250);
+        var image = $("<img>").attr("src", imgURL).height(200).width(200);
         image.attr("alt", name);
         image.attr("data-name", name);
         
-
         // Create a button on modal that will save information to favorite.html when clicked
         var save = $("#save");
         save.attr("data-name", response.drinks[i]);
-        console.log(save)
+        console.log(save);
 
         /* ----- MODAL ----- */
         image.on("click", function () {
@@ -717,7 +713,6 @@ $(document).ready(function () {
     });
   });
 
-  // Rum
   $("#rum").on("click", function () {
     var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Rum";
 
@@ -732,7 +727,7 @@ $(document).ready(function () {
 
         var name = response.drinks[i].strDrink;
         var imgURL = response.drinks[i].strDrinkThumb;
-        var image = $("<img>").attr("src", imgURL).height(250).width(250);
+        var image = $("<img>").attr("src", imgURL).height(200).width(200);
         image.attr("alt", name);
         image.attr("data-name", name);
 
@@ -740,7 +735,7 @@ $(document).ready(function () {
         // Create a button on modal that will save information to favorite.html when clicked
         var save = $("#save");
         save.attr("data-name", response.drinks[i]);
-        console.log(save)
+        console.log(save);
 
         /* ----- MODAL ----- */
         image.on("click", function () {
@@ -793,7 +788,6 @@ $(document).ready(function () {
     });
   });
 
-  // Non-Alcoholic
   $("#non-alc").on("click", function () {
     var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic";
 
@@ -808,15 +802,14 @@ $(document).ready(function () {
 
         var name = response.drinks[i].strDrink;
         var imgURL = response.drinks[i].strDrinkThumb;
-        var image = $("<img>").attr("src", imgURL).height(250).width(250);
+        var image = $("<img>").attr("src", imgURL).height(200).width(200);
         image.attr("alt", name);
         image.attr("data-name", name);
-
 
         // Create a button on modal that will save information to favorite.html when clicked
         var save = $("#save");
         save.attr("data-name", response.drinks[i]);
-        console.log(save)
+        console.log(save);
 
         /* ----- MODAL ----- */
         image.on("click", function () {
@@ -847,10 +840,10 @@ $(document).ready(function () {
 
           });
           // Get the modal
-          var modal = document.getElementById('myModal');
+          var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
-          var modalImg = document.getElementById("img01");
-          var captionText = document.getElementById("caption");
+          var modalImg = document.getElementById("modalImg");
+          var captionText = document.getElementById("modalText");
           modal.style.display = "block";
           modalImg.src = this.src;
           captionText.innerHTML = this.alt;
@@ -864,7 +857,7 @@ $(document).ready(function () {
         /* ---------- */
 
         $("#images").append(image);
-
+        
       }
     });
   });
