@@ -1,5 +1,18 @@
 // JavaScript Document
 
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyA-QfumrPujLAK_ZEySWiQjoLiIuPY3MQk",
+  authDomain: "group-project-1-1f7d8.firebaseapp.com",
+  databaseURL: "https://group-project-1-1f7d8.firebaseio.com",
+  projectId: "group-project-1-1f7d8",
+  storageBucket: "group-project-1-1f7d8.appspot.com",
+  messagingSenderId: "357236023309"
+};
+firebase.initializeApp(config);
+
+var database = firebase.database();
+
 $(document).ready(function () {
   "use strict";
 
@@ -22,10 +35,6 @@ $(document).ready(function () {
         image.attr("alt", name);
         image.attr("data-name", name);
 
-        // Create a button on modal that will save information to favorite.html when clicked
-        var favButton = $("#favIcon");
-        favButton.attr("data-name", response.meals[i]);
-        console.log(favButton);
 
         /* ----- MODAL ----- */
         // create another ajax call to get more info from mealDb 
@@ -61,6 +70,19 @@ $(document).ready(function () {
             instructionText.append(response.meals[0].strInstructions);
 
           });
+
+          // Firebase
+          var favButton = $("#favIcon");
+          favButton.on("click", function (event) {
+            event.preventDefault();
+            console.log(name);
+
+            database.ref().push({
+              name: name,
+              url: imgURL
+            });
+          });
+
           // Get the modal
           var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -106,10 +128,6 @@ $(document).ready(function () {
         image.attr("alt", name);
         image.attr("data-name", name);
 
-        // Create a button on modal that will save information to favorite.html when clicked
-        var save = $("#save");
-        save.attr("data-name", response.meals[i]);
-        console.log(save);
 
         /* ----- MODAL ----- */
         image.on("click", function () {
