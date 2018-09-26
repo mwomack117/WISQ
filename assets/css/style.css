@@ -1,80 +1,140 @@
 /* CSS Document */
 
 /* GLOBAL */
-body, html {
-  cursor: pointer;
+*, html, body {
   font-family: 'Montserrat', sans-serif;
-  height: 100%;
-  margin: 0px;
-  width: 100%;
+  top: 0;
 }
+
 /* NAV */
 nav {
   background-color: #757575;
   padding: 0px 30px;
 }
-/* FOOD BUTTONS */
-button {
+
+/* CONTENT */
+.container {
+  padding: 20px 0px;
+}
+button{
   font-family: 'Montserrat', sans-serif;
 }
-.container {
-  margin: auto;
-  padding: 20px;
-  max-width: 100%;
-}
-/* MODAL / IMAGE GALLERY */
-/* modal close button */
-.close {
-  position: absolute;
-  top: 100px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-/* gallery */
+
+/* GALLERY*/
 #images {
   margin-top: 20px;
 }
-/* API images */
 img {
-  border-radius: 30px;
   padding: 5px;
 }
-/* modal bg */
+
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* The Modal (background) */
 .modal {
-  animation-duration: 0.4s;
-  animation-name: fadeIn;
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-  bottom: 0;
-  display: none; /* Hidden by default */
-  max-height: 100%; /* Full height */
-  left: 0;
-  overflow: auto; /* Enable scroll if needed */
-  position: fixed; /* Stay in place */
-  right: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  z-index: 1; /* Sit on top */
-  -webkit-animation-duration: 0.4s;
-  -webkit-animation-name: fadeIn; /* Fade in the background */
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    padding-bottom: 100px; /* Location of the box */
+    left: 0;
+    top: 64px;
+    width: 100%; /* Full width */
+    max-height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
-/* modal image */
+
+/* Modal Content (Image) */
 .modal-content {
-  animation-duration: 0.4s;
-  animation-name: slideIn;
-  top: 100px;
-  margin: auto;
-  position: fixed;
-  width: 50%;
-  -webkit-animation-duration: 0.4s;
-  -webkit-animation-name: slideIn;
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
 }
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+    position: absolute;
+    top: 7%;
+    left: 23%;
+    font-size: 2.5em;
+}
+
+#infoDiv {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    color: #ccc;
+    position: absolute;
+    top: 150px;
+    left: 50px;
+}
+
+#instructionsDiv {
+    margin: auto;
+    display: block;
+    width: 20%;
+    max-width: 700px;
+    color: #ccc;
+    position: absolute;
+    top: 250px;
+    right: 50px;
+}
+
+#save {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption { 
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /* 100% Image Width on Smaller Screens */
-/*@media only screen and (max-width: 700px) {
-.modal-content {
-  max-width: 100%;
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
 }
-}*/
