@@ -82,6 +82,34 @@ img {
     font-size: 2.5em;
 }
 
+#infoDiv {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    color: #ccc;
+    position: absolute;
+    top: 150px;
+    left: 50px;
+}
+
+#instructionsDiv {
+    margin: auto;
+    display: block;
+    width: 20%;
+    max-width: 700px;
+    color: #ccc;
+    position: absolute;
+    top: 250px;
+    right: 50px;
+}
+
+#save {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
 /* Add Animation - Zoom in the Modal */
 .modal-content, #caption { 
     animation-name: zoom;

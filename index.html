@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -19,51 +18,56 @@
   <!-- GOOGLE FONT -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
+  <!-- MINIFIED MATERIALIZE JS  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
   <!-- JQUERY -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   
   <!-- MATERIALIZE JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+  
   <title>Wisq</title>
-
 </head>
 
 <body>
-
   <div class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo"> wisq </a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-          <i class="fas fa-bars"></i>
-        </a>
+      <div class="nav-wrapper"> <a href="#" class="brand-logo"> wisq </a> <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
+            class="fas fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
-          <li>
-            <a href="food.html"> eat </a>
-          </li>
-          <li>
-            <a href="drink.html"> drink </a>
-          </li>
-          <li>
-            <a href="favorite.html"> fav </a>
-          </li>
+          <li><a href="#"> eat </a></li>
+          <li><a href="drink.html"> drink </a></li>
+          <li><a href="favorite.html"> fav </a></li>
         </ul>
       </div>
     </nav>
-
     <ul class="sidenav" id="mobile-demo">
-      <li>
-        <a href="food.html"> eat </a>
-      </li>
-      <li>
-        <a href="drink.html"> drink </a>
-      </li>
-      <li>
-        <a href="favorite.html"> fav </a>
-      </li>
+      <li><a href="food.html"> eat </a></li>
+      <li><a href="drink.html"> drink </a></li>
+      <li><a href="favorite.html"> fav </a></li>
     </ul>
   </div>
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m6 l2">
+        <button type="button" class="waves-effect waves-red btn-flat" id="beef"> beef </button>
+      </div>
+      <div class="col s12 m6 l2">
+        <button type="button" class="waves-effect waves-red btn-flat" id="chicken"> chicken </button>
+      </div>
+      <div class="col s12 m6 l2">
+        <button type="button" class="waves-effect waves-red btn-flat" id="pork"> pork </button>
+      </div>
+      <div class="col s12 m6 l2">
+        <button type="button" class="waves-effect waves-red btn-flat" id="seafood"> seafood </button>
+      </div>
+      <div class="col s12 m6 l2">
+        <button type="button" class="waves-effect waves-red btn-flat" id="vegetarian"> vegetarian </button>
+      </div>
+      <div class="col s12 m6 l2">
+        <button type="button" class="waves-effect waves-red btn-flat" id="dessert"> dessert </button>
+      </div>
 
   <!--Slider for Images-->
   <div class="slider">
@@ -153,12 +157,6 @@
       </div>
     </div>
   </div>
-
-  <div class="container">
-    <div class="row">
-      <h5>Latest Recipes</h5>
-      <div class="divider"></div>
-
       
   <div class="row"> 
     <!-- The Modal -->
@@ -171,13 +169,39 @@
       <div id="caption"></div>
     </div>
   </div>
-  
-  <div class="row">
-    <div id="images"> </div>
-  </div>
-</div>
-    
-<script src="assets/js/script.js"></script>
 
+  <div class="container">
+    <div class="row">
+      <h5> Latest Food </h5>
+      <div class="divider"></div>
+      <div class="row">
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <!-- The Close Button -->
+          <span class="close">&times;</span>
+          <!-- Modal Content (The Image) -->
+          <img class="modal-content" id="img01" alt="">
+          <button id="save" class="fas fa-heart fa-5x"></button>
+          <!-- Modal Caption (Image Text) -->
+          <div id="caption"></div>
+          <div id="infoDiv">
+            <h5>Ingredients</h5>
+            <div id="info"></div>
+          </div>
+          <!-- <div id="instructionsDiv"> // instructions are really long
+            <h5>Instructions</h5>         // not sure if we want to add to modal
+            <div id="instructions"></div>
+          </div> -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div id="images"> </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/script.js"></script>
 </body>
+
 </html>
