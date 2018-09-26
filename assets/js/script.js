@@ -13,10 +13,17 @@
 // var database = firebase.database();
 
 $(document).ready(function () {
-  "use strict";
 
-  // SIDE NAV
-  //$('.sidenav').sidenav();
+  //M.AutoInit();
+
+  //SLIDER MATERIALIZE MATERIALBOX
+  $('.slider').slider({indicators:false});
+
+  // SIDE NAV 
+  $('.sidenav').sidenav();
+
+  // IMAGE MATERIALIZE MATERIALBOX
+  $('.materialboxed').materialbox();
 
   // OnClick functions to search for recipes by category. Results are returned as images
 
