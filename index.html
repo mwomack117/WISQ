@@ -25,69 +25,64 @@
 </head>
 
 <body>
-<div class="navbar-fixed">
-  <nav>
-    <div class="nav-wrapper"> <a href="#" class="brand-logo"> wisq </a> <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+<nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"> wisq </a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger" ><i class="fas fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
-        <!-- Maybe replace text with icons? -->
-        <li><a href="#"> eat </a></li>
-        <li><a href="drink.html"> drink </a></li>
-        <li><a href="favorite.html"> fav </a></li>
+        <li><a href="sass.html"> eat </a></li>
+        <li><a href="badges.html"> drink </a></li>
+        <li><a href="collapsible.html"> favs </a></li>
       </ul>
     </div>
   </nav>
+
   <ul class="sidenav" id="mobile-demo">
-    <!-- Maybe replace text with icons? -->
-    <li><a href="food.html"> eat </a></li>
-    <li><a href="drink.html"> drink </a></li>
-    <li><a href="favorite.html"> fav </a></li>
+    <li><a href="sass.html"> eat </a></li>
+    <li><a href="badges.html"> drink </a></li>
+    <li><a href="collapsible.html"> favs </a></li>
   </ul>
-</div>
+
 <div class="container">
   <div class="row">
-    <div class="col s12 m6 l2">
+    <div class="col s6 m4 l2">
       <button type="button" class="waves-effect waves-red btn-flat" id="beef"> beef </button>
     </div>
-    <div class="col s12 m6 l2">
+    <div class="col s6 m4 l2">
       <button type="button" class="waves-effect waves-red btn-flat" id="chicken"> chicken </button>
     </div>
-    <div class="col s12 m6 l2">
+    <div class="col s6 m4 l2">
       <button type="button" class="waves-effect waves-red btn-flat" id="pork"> pork </button>
     </div>
-    <div class="col s12 m6 l2">
+    <div class="col s6 m4 l2">
       <button type="button" class="waves-effect waves-red btn-flat" id="seafood"> seafood </button>
     </div>
-    <div class="col s12 m6 l2">
+    <div class="col s6 m4 l2">
       <button type="button" class="waves-effect waves-red btn-flat" id="vegetarian"> vegetarian </button>
     </div>
-    <div class="col s12 m6 l2">
+    <div class="col s6 m4 l2">
       <button type="button" class="waves-effect waves-red btn-flat" id="dessert"> dessert </button>
     </div>
   </div>
 </div>
   
 <div class="container">
+  <div class="row">
   <h5> Latest Food </h5>
   <div class="divider"></div>
-  
-  
-  <div class="row"> 
-    <!-- The Modal -->
-    <div id="myModal" class="modal"> 
-      <!-- The Close Button --> 
-      <span class="close">&times;</span> 
-      <!-- Modal Content (The Image) --> 
-      <img class="modal-content" id="img01" alt=""> 
-      <!-- Modal Caption (Image Text) -->
-      <div id="caption"></div>
+   <!-- API results -->
+    <div id="images"> </div>
+    <!-- Modal -->
+    <div class="modal" id="foodModal"> 
+      <!-- Modal Close Button --> 
+      <span class="close"><i class="fas fa-times"></i></span> 
+      <!-- Modal Image --> 
+      <img class="modal-content" id="modalImg" alt=""> 
+      <!-- Modal Caption Text -->
+      <div id="modalText"></div>
     </div>
   </div>
-  
-  <div class="row">
-    <div id="images"> </div>
-  </div>
 </div>
-  
   
 <script src="assets/js/script.js"></script>
 </body>

@@ -2,12 +2,7 @@
 
 $(document).ready(function () {
   "use strict";
-
-  // SIDE NAV
-  //$('.sidenav').sidenav();
-
-  // OnClick functions to search for recipes by category. Results are returned as images
-  // Beef
+  
   $("#beef").on("click", function () {
     var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=beef";
 
@@ -15,22 +10,22 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function (response) {
-      console.log(response);
+      // console.log(response);
       $("#images").empty();
 
       // For loop to return 12 images
       for (var i = 0; i < 12; i++) {
 
         var imgURL = response.meals[i].strMealThumb;
-        var image = $("<img>").attr("src", imgURL).height(250).width(250);
+        var image = $("<img>").attr("src", imgURL).height(200).width(200);
 
         /* ----- MODAL ----- */
         image.on("click", function () {
           // Get the modal
-          var modal = document.getElementById('myModal');
+          var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
-          var modalImg = document.getElementById("img01");
-          var captionText = document.getElementById("caption");
+          var modalImg = document.getElementById("modalImg");
+          var captionText = document.getElementById("modalText");
           modal.style.display = "block";
           modalImg.src = this.src;
           captionText.innerHTML = this.alt;
@@ -48,8 +43,7 @@ $(document).ready(function () {
       }
     });
   });
-  
-  //chicken
+
   $("#chicken").on("click", function () {
     var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=chicken";
 
@@ -57,22 +51,22 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function (response) {
-      console.log(response);
+      // console.log(response);
       $("#images").empty();
 
       // For loop to return 12 images
       for (var i = 0; i < 12; i++) {
 
         var imgURL = response.meals[i].strMealThumb;
-        var image = $("<img>").attr("src", imgURL).height(250).width(250);
+        var image = $("<img>").attr("src", imgURL).height(200).width(200);
 
         /* ----- MODAL ----- */
         image.on("click", function () {
           // Get the modal
-          var modal = document.getElementById('myModal');
+          var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
-          var modalImg = document.getElementById("img01");
-          var captionText = document.getElementById("caption");
+          var modalImg = document.getElementById("modalImg");
+          var captionText = document.getElementById("modalText");
           modal.style.display = "block";
           modalImg.src = this.src;
           captionText.innerHTML = this.alt;
@@ -91,7 +85,6 @@ $(document).ready(function () {
     });
   });
 
-  // Pork
   $("#pork").on("click", function () {
     var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=pork";
 
@@ -99,22 +92,22 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function (response) {
-      console.log(response);
+      // console.log(response);
       $("#images").empty();
 
       // For loop to return 12 images
       for (var i = 0; i < 12; i++) {
 
         var imgURL = response.meals[i].strMealThumb;
-        var image = $("<img>").attr("src", imgURL).height(250).width(250);
+        var image = $("<img>").attr("src", imgURL).height(200).width(200);
 
         /* ----- MODAL ----- */
         image.on("click", function () {
           // Get the modal
-          var modal = document.getElementById('myModal');
+          var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
-          var modalImg = document.getElementById("img01");
-          var captionText = document.getElementById("caption");
+          var modalImg = document.getElementById("modalImg");
+          var captionText = document.getElementById("modalText");
           modal.style.display = "block";
           modalImg.src = this.src;
           captionText.innerHTML = this.alt;
@@ -133,7 +126,6 @@ $(document).ready(function () {
     });
   });
 
-  // Seafood
   $("#seafood").on("click", function () {
     var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=seafood";
 
@@ -141,22 +133,22 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function (response) {
-      console.log(response);
+      // console.log(response);
       $("#images").empty();
 
       // For loop to return 12 images
       for (var i = 0; i < 12; i++) {
 
         var imgURL = response.meals[i].strMealThumb;
-        var image = $("<img>").attr("src", imgURL).height(250).width(250);
+        var image = $("<img>").attr("src", imgURL).height(200).width(200);
 
         /* ----- MODAL ----- */
         image.on("click", function () {
           // Get the modal
-          var modal = document.getElementById('myModal');
+          var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
-          var modalImg = document.getElementById("img01");
-          var captionText = document.getElementById("caption");
+          var modalImg = document.getElementById("modalImg");
+          var captionText = document.getElementById("modalText");
           modal.style.display = "block";
           modalImg.src = this.src;
           captionText.innerHTML = this.alt;
@@ -175,7 +167,6 @@ $(document).ready(function () {
     });
   });
 
-  // Vegetarian
   $("#vegetarian").on("click", function () {
     var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=vegetarian";
 
@@ -183,21 +174,21 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function (response) {
-      console.log(response);
+      // console.log(response);
       $("#images").empty();
       // For loop to return 12 images
       for (var i = 0; i < 12; i++) {
 
         var imgURL = response.meals[i].strMealThumb;
-        var image = $("<img>").attr("src", imgURL).height(250).width(250);
+        var image = $("<img>").attr("src", imgURL).height(200).width(200);
 
         /* ----- MODAL ----- */
         image.on("click", function () {
           // Get the modal
-          var modal = document.getElementById('myModal');
+          var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
-          var modalImg = document.getElementById("img01");
-          var captionText = document.getElementById("caption");
+          var modalImg = document.getElementById("modalImg");
+          var captionText = document.getElementById("modalText");
           modal.style.display = "block";
           modalImg.src = this.src;
           captionText.innerHTML = this.alt;
@@ -216,7 +207,6 @@ $(document).ready(function () {
     });
   });
 
-  // Dessert
   $("#dessert").on("click", function () {
     var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=desert";
 
@@ -224,21 +214,21 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function (response) {
-      console.log(response);
+      // console.log(response);
       $("#images").empty();
       // For loop to return 12 images
       for (var i = 0; i < 12; i++) {
 
         var imgURL = response.meals[i].strMealThumb;
-        var image = $("<img>").attr("src", imgURL).height(250).width(250);
+        var image = $("<img>").attr("src", imgURL).height(200).width(200);
 
         /* ----- MODAL ----- */
         image.on("click", function () {
           // Get the modal
-          var modal = document.getElementById('myModal');
+          var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
-          var modalImg = document.getElementById("img01");
-          var captionText = document.getElementById("caption");
+          var modalImg = document.getElementById("modalImg");
+          var captionText = document.getElementById("modalText");
           modal.style.display = "block";
           modalImg.src = this.src;
           captionText.innerHTML = this.alt;
@@ -252,6 +242,7 @@ $(document).ready(function () {
         /* ---------- */
 
         $("#images").append(image);
+        
 
       }
     });
