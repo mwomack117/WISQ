@@ -1,107 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- MINIFIED MATERIALIZE CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-  <!-- MINIFIED MATERIALIZE CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<!-- CUSTOM CSS  -->
+<link rel="stylesheet" href="assets/css/style.css" class="style">
 
-  <!-- CUSTOM CSS  -->
-  <link rel="stylesheet" href="assets/css/style.css" class="style">
+<!-- FONT AWESOME - ICONS -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-  <!-- FONT AWESOME - ICONS -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-    crossorigin="anonymous">
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
-  <!-- GOOGLE FONT -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<!-- JQUERY -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-  <!-- JQUERY -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  
-  <!-- MINIFIED MATERIALIZE JS  -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-  <title>Wisq</title>
-
+<!-- MINIFIED MATERIALIZE JS  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<title>Wisq</title>
 </head>
 
 <body>
-  
 <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper"> <a href="#" class="brand-logo"> wisq </a> <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
-            class="fas fa-bars"></i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="#"> eat </a></li>
-          <li><a href="drink.html"> drink </a></li>
-          <li><a href="favorite.html"> fav </a></li>
-        </ul>
-      </div>
-    </nav>
-    <ul class="sidenav" id="mobile-demo">
-      <li><a href="food.html"> eat </a></li>
+  <nav> <a href="#" class="brand-logo"> wisq </a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="index.html"> eat </a></li>
       <li><a href="drink.html"> drink </a></li>
       <li><a href="favorite.html"> fav </a></li>
     </ul>
-  </div>  
-
-  <div class="container">
-    <div class="row">
-      <div class="col s12 m6 l2">
-        <button type="button" class="waves-effect waves-teal btn-flat" id="vodka"> vodka </button>
-      </div>
-      <div class="col s12 m6 l2">
-        <button type="button" class="waves-effect waves-teal btn-flat" id="tequila"> tequila </button>
-      </div>
-      <div class="col s12 m6 l2">
-        <button type="button" class="waves-effect waves-teal btn-flat" id="gin"> gin </button>
-      </div>
-      <div class="col s12 m6 l2">
-        <button type="button" class="waves-effect waves-teal btn-flat" id="rum"> rum </button>
-      </div>
-      <div class="col s12 m6 l2">
-        <button type="button" class="waves-effect waves-teal btn-flat" id="non-alc"> non-alc </button>
-      </div>
+  </nav>
+</div>
+<div class="button-container">
+  <div class="row">
+    <div class="col s6 m4 l2">
+      <button class="waves-effect waves-light btn" id="vodka"> vodka </button>
+    </div>
+    <div class="col s6 m4 l2">
+      <button class="waves-effect waves-light btn" id="tequila"> tequila </button>
+    </div>
+    <div class="col s6 m4 l2">
+      <button class="waves-effect waves-light btn" id="gin"> gin </button>
+    </div>
+    <div class="col s6 m4 l2">
+      <button class="waves-effect waves-light btn" id="rum"> rum </button>
+    </div>
+    <div class="col s6 m4 l2">
+      <button class="waves-effect waves-light btn" id="scotch"> scotch </button>
+    </div>
+    <div class="col s6 m4 l2">
+      <button class="waves-effect waves-light btn" id="non-alc"> non-alc </button>
     </div>
   </div>
-
-  <div class="container">
-    <div class="row">
-      <h5> Latest Drinks </h5>
-      <div class="divider"></div>
-
-      <div class="row">
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-          <!-- The Close Button -->
-          <span class="close">&times;</span>
-          <!-- Modal Content (The Image) -->
-          <img class="modal-content" id="img01" alt="">
-          <button id="save" class="fas fa-heart fa-5x"></button>
-          <!-- Modal Caption (Image Text) -->
-          <div id="caption"></div>
-          <div id="infoDiv">
-            <h5>Ingredients</h5>
-            <div id="info"></div>
-          </div>
-          <div id="instructionsDiv"> 
-            <h5>Instructions</h5>         
-            <div id="instructions"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="portfolio">
-        <div id="images"></div>
-      </div>
+</div>
+<div class="recipe-container">
+  <div class="row">
+    <h4> Latest Drinks </h4>
+    <hr>
+  </div>
+  <div class="row">
+    <div id="images"></div>
+  </div>
+</div>
+<div id="drinkModal" class="modal">
+  <div id="caption"> </div>
+  <span id="favIcon"> <i class="fas fa-heart"></i> </span> <span class="close"> <i class="fas fa-times"></i> </span> <img class="modal-content" id="drinkImg" alt="">
+  <div id="recipeIngredients">
+    <h5>Ingredients</h5>
+    <p id="ingredients"></p>
+  </div>
+  <div class="clearfix">
+    <div id="recipeInstructions">
+      <h5>Instructions</h5>
+      <p id="instructions"></p>
     </div>
   </div>
-
-  <script src="assets/js/script.js"></script>
+</div>
+<script src="assets/js/script.js"></script>
 </body>
-
 </html>
