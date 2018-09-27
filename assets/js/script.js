@@ -16,6 +16,7 @@ var database = firebase.database();
 $(document).ready(function () {
   "use strict";
 
+
   $("#beef").on("click", function () {
     var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=beef";
 
@@ -35,7 +36,6 @@ $(document).ready(function () {
         image.attr("alt", name);
         image.attr("data-name", name);
 
-
         /* ----- MODAL ----- */
         // create another ajax call to get more info from mealDb 
         image.on("click", function () {
@@ -48,7 +48,6 @@ $(document).ready(function () {
             url: specificURL,
             method: "GET"
           }).then(function (response) {
-            console.log(response.meals[0]);
             $("#ingredients").empty();
             $("#instructions").empty();
 
@@ -71,17 +70,15 @@ $(document).ready(function () {
 
           });
 
-          // Firebase
-          var favButton = $("#favIcon");
-          favButton.on("click", function (event) {
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
             event.preventDefault();
-            console.log(name);
 
             database.ref().push({
-              name: name,
-              url: imgURL
+              name: name
             });
-          });
+          };
 
           // Get the modal
           var modal = document.getElementById('foodModal');
@@ -109,6 +106,37 @@ $(document).ready(function () {
     });
   });
 
+  // Firebase for all buttons //
+  // This function allows updates to page in real-time when the firebase database changes. 
+  database.ref().on("child_added", function (childSnapshot) {
+    console.log(childSnapshot.val().name);
+
+    var itemKey = childSnapshot.key;
+    // Create remove button to delete recipe
+    var removeButton = $("<button class='btn btn-outline-light removeItem'> <i class='fas fa-times'></i> </button>");
+    removeButton.attr('data-key', itemKey);
+
+    var newTableRow = "<tr><td>" + childSnapshot.val().name + "</td><td>";
+    $("tbody").append(removeButton, newTableRow);
+
+  });
+
+  // Function to delete recipe 
+  $("tbody").on("click", ".removeItem", function () {
+    event.preventDefault();
+    var confirmDelete = confirm("Are you sure you want to delete this recipe?");
+
+    if (confirmDelete) {
+      database.ref().child($(this).attr('data-key')).remove();
+
+    } else {
+      return;
+    }
+    location.reload();
+  });
+
+  // --------------------------------------------------------------------------- //
+
   $("#chicken").on("click", function () {
     var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=chicken";
 
@@ -130,6 +158,7 @@ $(document).ready(function () {
 
 
         /* ----- MODAL ----- */
+        // create another ajax call to get more info from mealDb 
         image.on("click", function () {
           var name = $(this).attr("data-name").split(" ").join("+").toLowerCase();
 
@@ -140,11 +169,10 @@ $(document).ready(function () {
             url: specificURL,
             method: "GET"
           }).then(function (response) {
-            console.log(response.meals[0]);
             $("#ingredients").empty();
             $("#instructions").empty();
 
-            // List indredients in the modal
+            // List Indredients in the modal
             var ingredient = response.meals[0];
             var infoText = $("#ingredients");
             infoText.append(ingredient.strIngredient1);
@@ -162,6 +190,17 @@ $(document).ready(function () {
             instructionText.append(response.meals[0].strInstructions);
 
           });
+
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+
           // Get the modal
           var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -170,20 +209,25 @@ $(document).ready(function () {
           modal.style.display = "block";
           modalImg.src = this.src;
           captionText.innerHTML = this.alt;
+
           // Get the <span> element that closes the modal
-          var span = document.getElementsByClassName("close")[0];
+          var closeButton = document.getElementsByClassName("close")[0];
+
           // When the user clicks on <span> (x), close the modal
-          span.onclick = function () {
+          closeButton.onclick = function () {
             modal.style.display = "none";
           };
+
         });
-        /* ---------- */
+        /* ------------------------------------------------ */
 
         $("#images").append(image);
 
       }
     });
   });
+
+  // --------------------------------------------------------------------------- //
 
   $("#pork").on("click", function () {
     var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=pork";
@@ -242,6 +286,17 @@ $(document).ready(function () {
             instructionText.append(response.meals[0].strInstructions);
 
           });
+
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+
           // Get the modal
           var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -322,6 +377,17 @@ $(document).ready(function () {
             instructionText.append(response.meals[0].strInstructions);
 
           });
+
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+
           // Get the modal
           var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -401,6 +467,17 @@ $(document).ready(function () {
             instructionText.append(response.meals[0].strInstructions);
 
           });
+
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+
           // Get the modal
           var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -480,6 +557,17 @@ $(document).ready(function () {
             instructionText.append(response.meals[0].strInstructions);
 
           });
+
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+
           // Get the modal
           var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -553,9 +641,20 @@ $(document).ready(function () {
 
             // Directions
             var instructionText = $("#instructions");
-            instructionText.append(response.drinks[0].strInstructions);
+            instructionText.append(response.meals[0].strInstructions);
 
           });
+
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+
           // Get the modal
           var modal = document.getElementById('drinkModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -629,9 +728,20 @@ $(document).ready(function () {
 
             // Directions
             var instructionText = $("#instructions");
-            instructionText.append(response.drinks[0].strInstructions);
+            instructionText.append(response.meals[0].strInstructions);
 
           });
+
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+
           // Get the modal
           var modal = document.getElementById('drinkModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -705,9 +815,20 @@ $(document).ready(function () {
 
             // Directions
             var instructionText = $("#instructions");
-            instructionText.append(response.drinks[0].strInstructions);
+            instructionText.append(response.meals[0].strInstructions);
 
           });
+
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+
           // Get the modal
           var modal = document.getElementById('drinkModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -781,9 +902,20 @@ $(document).ready(function () {
 
             // Directions
             var instructionText = $("#instructions");
-            instructionText.append(response.drinks[0].strInstructions);
+            instructionText.append(response.meals[0].strInstructions);
 
           });
+
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+
           // Get the modal
           var modal = document.getElementById('drinkModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -857,9 +989,20 @@ $(document).ready(function () {
 
             // Directions
             var instructionText = $("#instructions");
-            instructionText.append(response.drinks[0].strInstructions);
+            instructionText.append(response.meals[0].strInstructions);
 
           });
+
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+
           // Get the modal
           var modal = document.getElementById('drinkModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -933,9 +1076,20 @@ $(document).ready(function () {
 
             // Directions
             var instructionText = $("#instructions");
-            instructionText.append(response.drinks[0].strInstructions);
+            instructionText.append(response.meals[0].strInstructions);
 
           });
+
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+
           // Get the modal
           var modal = document.getElementById('drinkModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
