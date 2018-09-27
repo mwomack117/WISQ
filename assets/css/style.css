@@ -96,6 +96,14 @@ img {
   font-size: 25px;
   transition: 0.3s;
 }
+#favIcon:hover {
+  opacity: 0.6;
+}
+#favIcon:active {
+  background-color: black;
+  transform: translateY(6px);
+  color: red;
+}
 #recipeInstructions {
   color: white;
   padding: 30px;
