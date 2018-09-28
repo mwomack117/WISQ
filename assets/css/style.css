@@ -119,6 +119,14 @@ img {
   color: white;
   padding: 20px;
 }
+
+td {
+  text-align: center;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  font-weight: bold;
+
+}
 /* Add Animation - Zoom in the Modal */
 .modal-content, #caption, #recipeIngredients, #recipeInstructions {
   animation-name: zoom;
