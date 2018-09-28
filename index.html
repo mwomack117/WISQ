@@ -3,81 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <!-- MINIFIED MATERIALIZE CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
 <!-- CUSTOM CSS  -->
 <link rel="stylesheet" href="assets/css/style.css" class="style">
-
 <!-- FONT AWESOME - ICONS -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
 <!-- GOOGLE FONT -->
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
 <!-- JQUERY -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+<!-- FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
 <!-- MINIFIED MATERIALIZE JS  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <title>Wisq</title>
 </head>
 
 <body>
-<div class="navbar-fixed">
-  <nav> <a href="#" class="brand-logo"> wisq </a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="index.html"> eat </a></li>
-      <li><a href="drink.html"> drink </a></li>
-      <li><a href="favorite.html"> fav </a></li>
-    </ul>
-  </nav>
-</div>
-<div class="button-container">
-  <div class="row">
-    <div class="col s6 m4 l2">
-      <button class="waves-effect waves-light btn" id="beef"> beef </button>
-    </div>
-    <div class="col s6 m4 l2">
-      <button class="waves-effect waves-light btn" id="chicken"> chicken </button>
-    </div>
-    <div class="col s6 m4 l2">
-      <button class="waves-effect waves-light btn" id="pork"> pork </button>
-    </div>
-    <div class="col s6 m4 l2">
-      <button class="waves-effect waves-light btn" id="seafood"> seafood </button>
-    </div>
-    <div class="col s6 m4 l2">
-      <button class="waves-effect waves-light btn" id="vegetarian"> vegetarian </button>
-    </div>
-    <div class="col s6 m4 l2">
-      <button class="waves-effect waves-light btn" id="dessert"> dessert </button>
+<div class="container"> 
+  <!-- PAGE HEADER -->
+  <div class="row center-align"> 
+    <!--WELCOME-->
+    <div class="col s12">
+      <h2> Welcome to WISQ </h2>
     </div>
   </div>
-</div>
-<div class="recipe-container">
-  <div class="row">
-    <h4> Latest Food </h4>
-    <hr>
-  </div>
-  <div class="row">
-    <div id="images"></div>
-  </div>
-</div>
-  
-<div id="foodModal" class="modal">
-  <div id="caption"> </div>
-  <span id="favIcon"> <i class="fas fa-heart"></i> </span> <span class="close"> <i class="fas fa-times"></i> </span> <img class="modal-content" id="foodImg" alt="">
-  <div id="recipeIngredients">
-    <h5>Ingredients</h5>
-    <p id="ingredients"></p>
-  </div>
-  <div class="clearfix">
-    <div id="recipeInstructions">
-      <h5>Instructions</h5>
-      <p id="instructions"></p>
+  <!--DESCRIPTION-->
+  <div class="row center-align">
+    <div class="col s12">
+      <h4> The app that helps you choose your next meal or cocktail. Whether it's date night or a backyard barbeque, we've got you covered. </h4>
+      <br>
+      <h4> Search. Save. Make. </h4>
+      <br>
+      <h4> Lets WISQ something up! </h4>
     </div>
+  </div>
+  <!--BUTTON-->
+  <div class="row center-align">
+    <div class="col s12"> <a class="waves-effect waves-light btn" href="eat.html">Get Cookin'</a> </div>
   </div>
 </div>
 <script src="assets/js/script.js"></script>

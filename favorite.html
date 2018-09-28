@@ -3,22 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <!-- MINIFIED MATERIALIZE CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
 <!-- CUSTOM CSS  -->
 <link rel="stylesheet" href="assets/css/style.css" class="style">
-
 <!-- FONT AWESOME - ICONS -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
 <!-- GOOGLE FONT -->
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
 <!-- JQUERY -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+<!-- FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
 <!-- MINIFIED MATERIALIZE JS  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <title>Wisq</title>
@@ -26,9 +22,9 @@
 
 <body>
 <div class="navbar-fixed">
-  <nav> <a href="#" class="brand-logo"> wisq </a>
+  <nav> <a href="index.html" class="brand-logo"> wisq </a>
     <ul class="right hide-on-med-and-down">
-      <li><a href="index.html"> eat </a></li>
+      <li><a href="eat.html"> eat </a></li>
       <li><a href="drink.html"> drink </a></li>
       <li><a href="favorite.html"> fav </a></li>
     </ul>
@@ -40,21 +36,14 @@
     <hr>
   </div>
   <div class="row">
-    <div id="images"></div>
-  </div>
-</div>
-<div id="favModal" class="modal">
-  <div id="caption"> </div>
-  <span id="favIcon"> <i class="fas fa-heart"></i> </span> <span class="close"> <i class="fas fa-times"></i> </span> <img class="modal-content" id="favImg" alt="">
-  <div id="recipeIngredients">
-    <h5>Ingredients</h5>
-    <p id="ingredients"></p>
-  </div>
-  <div class="clearfix">
-    <div id="recipeInstructions">
-      <h5>Instructions</h5>
-      <p id="instructions"></p>
-    </div>
+    <table class="table">
+      <thead>
+        <tr> </tr>
+      </thead>
+      <tbody>
+        <!-- Insert food rows here -->
+      </tbody>
+    </table>
   </div>
 </div>
 <script src="assets/js/script.js"></script>

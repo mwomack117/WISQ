@@ -13,6 +13,9 @@ body {
 h4 {
   text-align: center;
 }
+.container {
+  margin-top: 400px;
+}
 /* NAV */
 nav {
   background-color: black;
@@ -36,6 +39,12 @@ button {
   font-family: 'Montserrat', sans-serif;
   margin: 10px;
 }
+td{
+  text-align: center;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+ }
 /* GALLERY */
 #images {
   margin-top: 20px;
@@ -95,6 +104,12 @@ img {
   color: red;
   font-size: 25px;
   transition: 0.3s;
+}
+#favIcon:hover {
+  opacity: 0.6;
+}
+#favIcon:active {
+  transform: translateY(6px);
 }
 #recipeInstructions {
   color: white;

@@ -1,7 +1,49 @@
 // JavaScript Document
 
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyA-QfumrPujLAK_ZEySWiQjoLiIuPY3MQk",
+  authDomain: "group-project-1-1f7d8.firebaseapp.com",
+  databaseURL: "https://group-project-1-1f7d8.firebaseio.com",
+  projectId: "group-project-1-1f7d8",
+  storageBucket: "group-project-1-1f7d8.appspot.com",
+  messagingSenderId: "357236023309"
+};
+firebase.initializeApp(config);
+
+var database = firebase.database();
+
 $(document).ready(function () {
   "use strict";
+  
+  // Firebase for all buttons //
+  // This function allows updates to page in real-time when the firebase database changes. 
+  database.ref().on("child_added", function (childSnapshot) {
+    console.log(childSnapshot.val().name);
+
+    var itemKey = childSnapshot.key;
+    // Create remove button to delete recipe
+    var removeButton = $("<button class='waves-effect waves-light btn'> <i class='fas fa-times'></i> </button>");
+    removeButton.attr('data-key', itemKey);
+
+    var newTableRow = "<tr><td>" + childSnapshot.val().name + "</td></tr>";
+    $("tbody").append(removeButton, newTableRow);
+
+  });
+  
+  // Function to delete recipe 
+  $("tbody").on("click", ".removeItem", function () {
+    event.preventDefault();
+    var confirmDelete = confirm("Are you sure you want to delete this recipe?");
+
+    if (confirmDelete) {
+      database.ref().child($(this).attr('data-key')).remove();
+
+    } else {
+      return;
+    }
+    location.reload();
+  });
 
   $("#beef").on("click", function () {
     var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=beef";
@@ -21,11 +63,6 @@ $(document).ready(function () {
         var image = $("<img>").attr("src", imgURL).height(200).width(200);
         image.attr("alt", name);
         image.attr("data-name", name);
-
-        // Create a button on modal that will save information to favorite.html when clicked
-        var favButton = $("#favIcon");
-        favButton.attr("data-name", response.meals[i]);
-        console.log(favButton);
 
         /* ----- MODAL ----- */
         // create another ajax call to get more info from mealDb 
@@ -61,6 +98,17 @@ $(document).ready(function () {
             instructionText.append(response.meals[0].strInstructions);
 
           });
+
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+
           // Get the modal
           var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -106,11 +154,6 @@ $(document).ready(function () {
         image.attr("alt", name);
         image.attr("data-name", name);
 
-        // Create a button on modal that will save information to favorite.html when clicked
-        var save = $("#save");
-        save.attr("data-name", response.meals[i]);
-        console.log(save);
-
         /* ----- MODAL ----- */
         image.on("click", function () {
           var name = $(this).attr("data-name").split(" ").join("+").toLowerCase();
@@ -144,6 +187,17 @@ $(document).ready(function () {
             instructionText.append(response.meals[0].strInstructions);
 
           });
+          
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+          
           // Get the modal
           var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -186,11 +240,6 @@ $(document).ready(function () {
         image.attr("alt", name);
         image.attr("data-name", name);
 
-        // Create a button on modal that will save information to favorite.html when clicked
-        var save = $("#save");
-        save.attr("data-name", response.meals[i]);
-        console.log(save);
-
         /* ----- MODAL ----- */
         image.on("click", function () {
           var name = $(this).attr("data-name").split(" ").join("+").toLowerCase();
@@ -224,6 +273,17 @@ $(document).ready(function () {
             instructionText.append(response.meals[0].strInstructions);
 
           });
+          
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+          
           // Get the modal
           var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -266,11 +326,6 @@ $(document).ready(function () {
         image.attr("alt", name);
         image.attr("data-name", name);
 
-        // Create a button on modal that will save information to favorite.html when clicked
-        var save = $("#save");
-        save.attr("data-name", response.meals[i]);
-        console.log(save);
-
         /* ----- MODAL ----- */
         image.on("click", function () {
           var name = $(this).attr("data-name").split(" ").join("+").toLowerCase();
@@ -304,6 +359,17 @@ $(document).ready(function () {
             instructionText.append(response.meals[0].strInstructions);
 
           });
+          
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+          
           // Get the modal
           var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -345,11 +411,6 @@ $(document).ready(function () {
         image.attr("alt", name);
         image.attr("data-name", name);
 
-        // Create a button on modal that will save information to favorite.html when clicked
-        var save = $("#save");
-        save.attr("data-name", response.meals[i]);
-        console.log(save);
-
         /* ----- MODAL ----- */
         image.on("click", function () {
           var name = $(this).attr("data-name").split(" ").join("+").toLowerCase();
@@ -383,6 +444,17 @@ $(document).ready(function () {
             instructionText.append(response.meals[0].strInstructions);
 
           });
+          
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+          
           // Get the modal
           var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -424,11 +496,6 @@ $(document).ready(function () {
         image.attr("alt", name);
         image.attr("data-name", name);
 
-        // Create a button on modal that will save information to favorite.html when clicked
-        var save = $("#save");
-        save.attr("data-name", response.meals[i]);
-        console.log(save);
-
         /* ----- MODAL ----- */
         image.on("click", function () {
           var name = $(this).attr("data-name").split(" ").join("+").toLowerCase();
@@ -462,6 +529,17 @@ $(document).ready(function () {
             instructionText.append(response.meals[0].strInstructions);
 
           });
+          
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+          
           // Get the modal
           var modal = document.getElementById('foodModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -503,12 +581,6 @@ $(document).ready(function () {
         image.attr("alt", name);
         image.attr("data-name", name);
 
-
-        // Create a button on modal that will save information to favorite.html when clicked
-        var save = $("#save");
-        save.attr("data-name", response.drinks[i]);
-        console.log(save);
-
         /* ----- MODAL ----- */
         image.on("click", function () {
           var name = $(this).attr("data-name").split(" ").join("+").toLowerCase();
@@ -538,6 +610,17 @@ $(document).ready(function () {
             instructionText.append(response.drinks[0].strInstructions);
 
           });
+          
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+          
           // Get the modal
           var modal = document.getElementById('drinkModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -579,12 +662,6 @@ $(document).ready(function () {
         image.attr("alt", name);
         image.attr("data-name", name);
 
-
-        // Create a button on modal that will save information to favorite.html when clicked
-        var save = $("#save");
-        save.attr("data-name", response.drinks[i]);
-        console.log(save);
-
         /* ----- MODAL ----- */
         image.on("click", function () {
           var name = $(this).attr("data-name").split(" ").join("+").toLowerCase();
@@ -614,6 +691,17 @@ $(document).ready(function () {
             instructionText.append(response.drinks[0].strInstructions);
 
           });
+          
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+          
           // Get the modal
           var modal = document.getElementById('drinkModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -655,12 +743,6 @@ $(document).ready(function () {
         image.attr("alt", name);
         image.attr("data-name", name);
 
-
-        // Create a button on modal that will save information to favorite.html when clicked
-        var save = $("#save");
-        save.attr("data-name", response.drinks[i]);
-        console.log(save);
-
         /* ----- MODAL ----- */
         image.on("click", function () {
           var name = $(this).attr("data-name").split(" ").join("+").toLowerCase();
@@ -690,6 +772,17 @@ $(document).ready(function () {
             instructionText.append(response.drinks[0].strInstructions);
 
           });
+          
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+          
           // Get the modal
           var modal = document.getElementById('drinkModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -731,12 +824,6 @@ $(document).ready(function () {
         image.attr("alt", name);
         image.attr("data-name", name);
 
-
-        // Create a button on modal that will save information to favorite.html when clicked
-        var save = $("#save");
-        save.attr("data-name", response.drinks[i]);
-        console.log(save);
-
         /* ----- MODAL ----- */
         image.on("click", function () {
           var name = $(this).attr("data-name").split(" ").join("+").toLowerCase();
@@ -766,6 +853,17 @@ $(document).ready(function () {
             instructionText.append(response.drinks[0].strInstructions);
 
           });
+          
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+          
           // Get the modal
           var modal = document.getElementById('drinkModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -807,12 +905,6 @@ $(document).ready(function () {
         image.attr("alt", name);
         image.attr("data-name", name);
 
-
-        // Create a button on modal that will save information to favorite.html when clicked
-        var save = $("#save");
-        save.attr("data-name", response.drinks[i]);
-        console.log(save);
-
         /* ----- MODAL ----- */
         image.on("click", function () {
           var name = $(this).attr("data-name").split(" ").join("+").toLowerCase();
@@ -842,6 +934,17 @@ $(document).ready(function () {
             instructionText.append(response.drinks[0].strInstructions);
 
           });
+          
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+          
           // Get the modal
           var modal = document.getElementById('drinkModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -883,12 +986,6 @@ $(document).ready(function () {
         image.attr("alt", name);
         image.attr("data-name", name);
 
-
-        // Create a button on modal that will save information to favorite.html when clicked
-        var save = $("#save");
-        save.attr("data-name", response.drinks[i]);
-        console.log(save);
-
         /* ----- MODAL ----- */
         image.on("click", function () {
           var name = $(this).attr("data-name").split(" ").join("+").toLowerCase();
@@ -918,6 +1015,17 @@ $(document).ready(function () {
             instructionText.append(response.drinks[0].strInstructions);
 
           });
+          
+          // // Firebase // //
+          var favButton = document.querySelector("#favIcon");
+          favButton.onclick = function (event) {
+            event.preventDefault();
+
+            database.ref().push({
+              name: name
+            });
+          };
+          
           // Get the modal
           var modal = document.getElementById('drinkModal');
           // Get the image and insert it inside the modal - use its "alt" text as a caption
