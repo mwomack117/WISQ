@@ -19,21 +19,28 @@ h4 {
 /* NAV */
 nav {
   background-color: black;
-  margin-top: 250px;
-  opacity: 0.4;
+  /* margin-top: 250px; */
+  opacity: 0.6;
   padding: 0px 200px;
+}
+nav li a{
+  font-size: 22px;
+}
+#logo {
+  font-size: 34px;
+  font-weight: bold;
+}
+
+nav a {
+  font-size: 32px;
 }
 /* CONTENT */
 .button-container {
-  margin-top: 270px;
+  margin-top: 70px;
   padding: 20px 0px;
 }
 .fav-container {
-  margin-top: 270px;
-  padding: 50px;
-}
-.recipe-container {
-  padding: 50px;
+  margin-top: 90px;
 }
 button {
   font-family: 'Montserrat', sans-serif;
