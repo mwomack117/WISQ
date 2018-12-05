@@ -16,6 +16,27 @@ var database = firebase.database();
 $(document).ready(function () {
   "use strict";
 
+  var queryURL = "https://www.themealdb.com/api/json/v1/1/latest.php";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function (response) {
+      console.log(response);
+
+      // For loop to return images
+      for (var i = 0; i < response.length; i++) {
+
+        // var name = response.meals[i].strMeal;
+        var imgURL = response.meals[i].strMealThumb;
+        var image = $("<img>").attr("src", imgURL).height(200).width(200);
+        image.attr("alt", name);
+        image.attr("data-name", name);
+      };
+
+      $("#images").append(image);
+
+    })
 
   $("#beef").on("click", function () {
     var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=beef";
