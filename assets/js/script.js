@@ -19,26 +19,90 @@ $(document).ready(function () {
   // Display Latest random Meals
   var queryURL = "https://www.themealdb.com/api/json/v1/1/latest.php";
 
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function (response) {
-      console.log(response);
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function (response) {
+    console.log(response);
 
-      // For loop to return images
-      for (var i = 0; i < 10; i++) {
+    // For loop to return images
+    for (var i = 0; i < 10; i++) {
 
-        // var name = response.meals[i].strMeal;
-        var imgURL = response.meals[i].strMealThumb;
-        var image = $("<img>").attr("src", imgURL).height(200).width(200);
-        image.attr("alt", name);
-        image.attr("data-name", name);
-        $("#images").append(image);
-      };
+      var name = response.meals[i].strMeal;
+      var imgURL = response.meals[i].strMealThumb;
+      var image = $("<img>").attr("src", imgURL).height(200).width(200);
+      image.attr("alt", name);
+      image.attr("data-name", name);
 
-      
+      /* ----- MODAL ----- */
+      // create another ajax call to get more info from mealDb 
+      image.on("click", function () {
+        var name = $(this).attr("data-name").split(" ").join("+").toLowerCase();
 
-    })
+        // This query gives us more info that we can print to the modal (ingredients, instructions, etc..)
+        var specificURL = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + name;
+
+        $.ajax({
+          url: specificURL,
+          method: "GET"
+        }).then(function (response) {
+          $("#ingredients").empty();
+          $("#instructions").empty();
+
+          // List Indredients in the modal
+          var ingredient = response.meals[0];
+          var infoText = $("#ingredients");
+          infoText.append(ingredient.strIngredient1);
+          infoText.append("<br>" + ingredient.strIngredient2);
+          infoText.append("<br>" + ingredient.strIngredient3);
+          infoText.append("<br>" + ingredient.strIngredient4);
+          infoText.append("<br>" + ingredient.strIngredient5);
+          infoText.append("<br>" + ingredient.strIngredient6);
+          infoText.append("<br>" + ingredient.strIngredient7);
+          infoText.append("<br>" + ingredient.strIngredient8);
+          infoText.append("<br>" + ingredient.strIngredient9);
+
+          // Directions
+          var instructionText = $("#instructions");
+          instructionText.append(response.meals[0].strInstructions);
+
+        });
+
+        // // Firebase // //
+        var favButton = document.querySelector("#favIcon");
+        favButton.onclick = function (event) {
+          event.preventDefault();
+
+          database.ref().push({
+            name: name
+          });
+        };
+
+        // Get the modal
+        var modal = document.getElementById('foodModal');
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var modalImg = document.getElementById("foodImg");
+        var captionText = document.getElementById("caption");
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+
+        // Get the <span> element that closes the modal
+        var closeButton = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        closeButton.onclick = function () {
+          modal.style.display = "none";
+        };
+
+      });
+      /* ------------------------------------------------ */
+
+      $("#images").append(image);
+
+    }
+  });
+
 
   $("#beef").on("click", function () {
     var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=beef";
