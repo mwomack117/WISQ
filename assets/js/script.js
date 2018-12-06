@@ -16,6 +16,7 @@ var database = firebase.database();
 $(document).ready(function () {
   "use strict";
 
+  // Display Latest random Meals
   var queryURL = "https://www.themealdb.com/api/json/v1/1/latest.php";
 
     $.ajax({
@@ -25,16 +26,17 @@ $(document).ready(function () {
       console.log(response);
 
       // For loop to return images
-      for (var i = 0; i < response.length; i++) {
+      for (var i = 0; i < 10; i++) {
 
         // var name = response.meals[i].strMeal;
         var imgURL = response.meals[i].strMealThumb;
         var image = $("<img>").attr("src", imgURL).height(200).width(200);
         image.attr("alt", name);
         image.attr("data-name", name);
+        $("#images").append(image);
       };
 
-      $("#images").append(image);
+      
 
     })
 
@@ -142,7 +144,7 @@ $(document).ready(function () {
 
   });
 
-  // Function to delete recipe 
+  // Function to delete recipe on FAVS page
   $("tbody").on("click", ".removeItem", function () {
     event.preventDefault();
     var confirmDelete = confirm("Are you sure you want to delete this recipe?");
@@ -620,7 +622,7 @@ $(document).ready(function () {
       method: "GET"
     }).then(function (response) {
       console.log(response);
-      $("#images").empty();
+      $("#drink-images").empty();
       // For loop to return 12 images
       for (var i = 0; i < 15; i++) {
 
@@ -693,7 +695,7 @@ $(document).ready(function () {
         });
         /* ---------- */
 
-        $("#images").append(image);
+        $("#drink-images").append(image);
 
       }
     });
@@ -707,7 +709,7 @@ $(document).ready(function () {
       method: "GET"
     }).then(function (response) {
       console.log(response);
-      $("#images").empty();
+      $("#drink-images").empty();
       // For loop to return 12 images
       for (var i = 0; i < 15; i++) {
 
@@ -780,7 +782,7 @@ $(document).ready(function () {
         });
         /* ---------- */
 
-        $("#images").append(image);
+        $("#drink-images").append(image);
 
       }
     });
@@ -794,7 +796,7 @@ $(document).ready(function () {
       method: "GET"
     }).then(function (response) {
       console.log(response);
-      $("#images").empty();
+      $("#drink-images").empty();
       // For loop to return 12 images
       for (var i = 0; i < 15; i++) {
 
@@ -868,7 +870,7 @@ $(document).ready(function () {
         });
         /* ---------- */
 
-        $("#images").append(image);
+        $("#drink-images").append(image);
 
       }
     });
@@ -882,7 +884,7 @@ $(document).ready(function () {
       method: "GET"
     }).then(function (response) {
       console.log(response);
-      $("#images").empty();
+      $("#drink-images").empty();
       // For loop to return 12 images
       for (var i = 0; i < 15; i++) {
 
@@ -955,7 +957,7 @@ $(document).ready(function () {
         });
         /* ---------- */
 
-        $("#images").append(image);
+        $("#drink-images").append(image);
 
       }
     });
@@ -969,7 +971,7 @@ $(document).ready(function () {
       method: "GET"
     }).then(function (response) {
       console.log(response);
-      $("#images").empty();
+      $("#drink-images").empty();
       // For loop to return 12 images
       for (var i = 0; i < 15; i++) {
 
@@ -1042,7 +1044,7 @@ $(document).ready(function () {
         });
         /* ---------- */
 
-        $("#images").append(image);
+        $("#drink-images").append(image);
 
       }
     });
@@ -1056,7 +1058,7 @@ $(document).ready(function () {
       method: "GET"
     }).then(function (response) {
       console.log(response);
-      $("#images").empty();
+      $("#drink-images").empty();
       // For loop to return 12 images
       for (var i = 0; i < 15; i++) {
 
@@ -1130,7 +1132,7 @@ $(document).ready(function () {
         });
         /* ---------- */
 
-        $("#images").append(image);
+        $("#drink-images").append(image);
 
       }
     });

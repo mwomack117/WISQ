@@ -20,11 +20,12 @@ h4 {
 nav {
   background-color: black;
   /* margin-top: 250px; */
-  opacity: 0.6;
+  opacity: 0.7;
   padding: 0px 200px;
 }
 nav li a{
   font-size: 22px;
+  color: white;
 }
 #logo {
   font-size: 34px;
