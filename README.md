@@ -11,3 +11,4 @@ Keep track of your favorite recipes and cocktails.
   * **Javascript and jQuery** *for dynamic functionality*
   * **Materialize CSS Framework** - *for frontend styling* 
   * **APIs** - *for interacting with the CocktailDB and MealDB*
+  * **Firebase Database** - *for saving favoritie recipes*
