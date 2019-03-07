@@ -1,5 +1,5 @@
 # Wisq
-Wisq is a web application that displays drink and meal recipes. You can search by main ingredients and the get back random recipes to browse. Keep track of your favorite recipes by saving them to the favorites page.
+Wisq is a web application that displays drink and meal recipes. You can search by main ingredients and then get back recipes to browse. Keep track of your favorite recipes by saving them to the favorites page.
 
 [Check out the app and get cooking!](https://mwomack117.github.io/WISQ/)
 
